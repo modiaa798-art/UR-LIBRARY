@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📚 UR LIBRARY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="theme-toggle" id="themeToggle" title="تبديل الوضع">🌙</div>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>📚 UR LIBRARY</h1>
+      <p class="subtitle">مكتبتي الشخصية السحابية</p>
+    </div>
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+      <button id="uploadBtn" class="btn btn-primary">
+        <span class="icon">+</span> رفع ملف PDF
+      </button>
+      <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+    </div>
+
+    <!-- Classification Form -->
+    <div class="modal" id="classificationModal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>تصنيف الملف</h2>
+          <button class="close" onclick="closeModal()">&times;</button>
+        </div>
+        
+        <div class="form-group">
+          <label>اسم الملف</label>
+          <input type="text" id="fileName" class="form-input" readonly>
+        </div>
+
+        <div class="form-group">
+          <label>المادة</label>
+          <select id="subject" class="form-input">
+            <option value="">-- اختر المادة --</option>
+            <option>الرياضيات</option>
+            <option>الفيزياء</option>
+            <option>الكيمياء</option>
+            <option>الأحياء</option>
+            <option>اللغة الإنجليزية</option>
+            <option>اللغة العربية</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>نوع الملف</label>
+          <select id="type" class="form-input">
+            <option value="">-- اختر النوع --</option>
+            <option>امتحان</option>
+            <option>أسئلة</option>
+            <option>مراجعة</option>
+            <option>ملاحظات</option>
+            <option>شرح</option>
+            <option>واجب</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>الترم</label>
+            <select id="term" class="form-input">
+              <option value="">-- اختر --</option>
+              <option>الترم الأول</option>
+              <option>الترم الثاني</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>السنة</label>
+            <select id="year" class="form-input">
+              <option value="">-- اختر --</option>
+              <option>2024/2025</option>
+              <option>2025/2026</option>
+              <option>2026/2027</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>الفصل / الموضوع (اختياري)</label>
+          <input type="text" id="chapter" class="form-input" placeholder="مثال: الفصل 3">
+        </div>
+
+        <div class="form-group">
+          <label>Tags (اختياري)</label>
+          <input type="text" id="tags" class="form-input" placeholder="مثال: مهم، صعب">
+        </div>
+
+        <div class="modal-actions">
+          <button id="cancelBtn" class="btn btn-secondary" onclick="closeModal()">إلغاء</button>
+          <button id="saveBtn" class="btn btn-primary">حفظ الملف</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section" id="statsSection">
+      <div class="stat-card">
+        <div class="stat-number" id="totalFiles">0</div>
+        <div class="stat-label">إجمالي الملفات</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="totalSize">0</div>
+        <div class="stat-label">الحجم المستخدم</div>
+      </div>
+    </div>
+
+    <!-- Library Section -->
+    <div class="library-section">
+      <div class="library-header">
+        <h2>📚 مكتبتي</h2>
+        <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن ملف...">
+      </div>
+
+      <div class="subjects-container" id="subjectsContainer">
+        <!-- يتم ملؤه من JavaScript -->
+      </div>
+
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <div class="empty-icon">📭</div>
+        <p>لا توجد ملفات بعد</p>
+        <p class="empty-hint">ابدأ برفع ملفك الأول!</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

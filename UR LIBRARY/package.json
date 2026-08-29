@@ -1,0 +1,25 @@
+{
+  "name": "ur-library",
+  "version": "1.0.0",
+  "description": "مكتبة ملفات PDF شخصية سحابية مجانية - UR LIBRARY",
+  "type": "module",
+  "main": "worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {},
+  "author": "Mohamed Diaa",
+  "license": "MIT",
+  "keywords": [
+    "cloudflare",
+    "pdf",
+    "library",
+    "r2",
+    "workers"
+  ]
+}

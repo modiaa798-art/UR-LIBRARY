@@ -1,0 +1,32 @@
+name = "ur-library-api"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+workers_dev = true
+
+# R2 Bucket Binding
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "ur-library-files"
+
+# Routes (optional - if deploying under a custom domain)
+# [[routes]]
+# pattern = "api.yourdomain.com/*"
+# zone_name = "yourdomain.com"
+
+# Analytics Engine (optional)
+# [analytics]
+# enabled = true
+
+# Build settings (optional)
+# [build]
+# command = "npm install"
+# cwd = "."
+# main = "src/index.js"
+
+# Environment variables (optional)
+# [env.production]
+# vars = { ENVIRONMENT = "production" }
+
+# Triggers (optional)
+# [triggers.crons]
+# crons = ["0 2 * * *"]
